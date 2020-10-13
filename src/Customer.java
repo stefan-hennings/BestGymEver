@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Customer {
+public class Customer implements Serializable {
     private String name;
     private long personalNumber;
     private LocalDate membershipPaymentDate;

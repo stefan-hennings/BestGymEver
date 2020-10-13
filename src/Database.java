@@ -30,15 +30,18 @@ public class Database implements Serializable {
     public static void readFromTextFile() {
         try (Scanner scanner = new Scanner(new FileInputStream("customers.txt")).useDelimiter("[,\n]")) {
             while (scanner.hasNext()) {
-                customers.add(new Customer(scanner.nextLong(), scanner.next().trim(), LocalDate.parse(scanner.next().trim())));
+                try {
+                    customers.add(new Customer(scanner.nextLong(), scanner.next().trim(), LocalDate.parse(scanner.next().trim())));
+                } catch (InputMismatchException e) {
+                    break;
+                }
                 System.out.println(customers.get(customers.size()-1).getName());
                 System.out.println(customers.get(customers.size()-1).getPersonalNumber());
                 System.out.println(customers.get(customers.size()-1).getMembershipPaymentDate());
-                
             }
+//            Database.update();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
     }
 }

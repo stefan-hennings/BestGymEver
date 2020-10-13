@@ -7,7 +7,7 @@ public class Menus {
         Customer customer = null;
         switch (Utility.getInt("\nVad vill du göra?\n\n" +
                 "1. Checka in via personnummer\n" +
-                "2. Checka in via namn")) {
+                "2. Checka in via namn\n")) {
             case 1 -> customer = CheckIn.findCustomerByPersonalNumber(Utility.getLong("Ange personnummer: "));
             case 2 -> customer = CheckIn.findCustomerByName(Utility.getString("Ange namn: "));
             default -> System.out.println("Ange ett giltigt val! (1-2)");

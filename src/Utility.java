@@ -25,7 +25,7 @@ public class Utility {
                 System.out.print(question);
                 return Integer.parseInt(Menus.scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Ogiltigt värde! ");
+                System.out.println("Ogiltigt värde! Endast heltal är tillåtna. ");
             }
         }
     }
@@ -36,7 +36,7 @@ public class Utility {
                 System.out.print(question);
                 return Long.parseLong(Menus.scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Ogiltigt värde! ");
+                System.out.println("Ogiltigt värde! Endast heltal är tillåtna. ");
             }
         }
     }
