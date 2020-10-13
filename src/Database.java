@@ -31,6 +31,10 @@ public class Database implements Serializable {
         try (Scanner scanner = new Scanner(new FileInputStream("customers.txt")).useDelimiter("[,\n]")) {
             while (scanner.hasNext()) {
                 customers.add(new Customer(scanner.nextLong(), scanner.next().trim(), LocalDate.parse(scanner.next().trim())));
+                System.out.println(customers.get(customers.size()-1).getName());
+                System.out.println(customers.get(customers.size()-1).getPersonalNumber());
+                System.out.println(customers.get(customers.size()-1).getMembershipPaymentDate());
+                
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -20,6 +20,7 @@ public class Customer {
 
     public void logVisit() {
         visits.add(LocalDate.now());
+        Database.update();
     }
 
     public String getName() {
