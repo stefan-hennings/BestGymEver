@@ -29,7 +29,6 @@ public class Database implements Serializable {
     public static void save() {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(database))) {
             out.writeObject(customers);
-            System.out.println("Data saved");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,9 +52,6 @@ public class Database implements Serializable {
                 } catch (InputMismatchException e) {
                     break;
                 }
-                /*System.out.println(customers.get(customers.size()-1).getName());
-                System.out.println(customers.get(customers.size()-1).getPersonalNumber());
-                System.out.println(customers.get(customers.size()-1).getMembershipPaymentDate());*/
             }
             Database.save();
         } catch (Exception e) {

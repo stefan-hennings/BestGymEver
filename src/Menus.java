@@ -27,7 +27,14 @@ public class Menus {
                 "2. Ensklid kunds\n" +
                 "3. Återgå till huvudmenyn\n")) {
             case 1 -> Gym.printAllVisitsAllCustomers();
-            case 2 -> Gym.findCustomer();
+            case 2 -> {
+                Customer customer = Gym.findCustomer();
+                if (customer != null) {
+                    customer.printAllVisits();
+                } else {
+                    System.out.println("Kunden finns inte. ");
+                }
+            }
             case 3 -> {
                 //return;
             }

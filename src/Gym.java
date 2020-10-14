@@ -41,18 +41,24 @@ public class Gym {
         if (customer == null) {
             System.out.println("Kunden är inte medlem. ");
         } else if (customer.isActiveMember()) {
-            customer.logVisit();
             System.out.println("Kunden har aktivt medlemskap. ");
+            customer.logVisit();
+            System.out.println("Besöket har loggats. ");
         } else {
-            System.out.println("Kundens medlemskap har gått ut. ");
+            System.out.println("Kundens medlemskap gick ut " + customer.getMembershipPaymentDate().plusYears(1));
         }
     }
 
     public static void printAllVisitsAllCustomers() {
+        boolean hasBeenVisited = false;
         for (Customer customer : Database.getCustomers()) {
             if (!customer.getVisits().isEmpty()) {
                 customer.printAllVisits();
+                hasBeenVisited = true;
             }
+        }
+        if (!hasBeenVisited) {
+            System.out.println("Ingen har besökt gymmet. ");
         }
     }
 }

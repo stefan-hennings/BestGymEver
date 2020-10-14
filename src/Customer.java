@@ -6,7 +6,7 @@ import java.util.List;
 public class Customer implements Serializable {
     private final String name;
     private final long personalNumber;
-    private LocalDate membershipPaymentDate;
+    private final LocalDate membershipPaymentDate;
     private final List<LocalDate> visits = new ArrayList<>();
 
     public Customer(long personalNumber, String name, LocalDate membershipPaymentDate) {
