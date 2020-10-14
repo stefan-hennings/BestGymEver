@@ -41,7 +41,9 @@ public class Gym {
 
     public static void printAllVisitsAllCustomers() {
         for (Customer customer : Database.getCustomers()) {
-            customer.printAllVisits();
+            if (!customer.getVisits().isEmpty()) {
+                customer.printAllVisits();
+            }
         }
     }
 }

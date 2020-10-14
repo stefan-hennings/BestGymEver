@@ -1,12 +1,13 @@
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer implements Serializable {
-    private String name;
-    private long personalNumber;
+    private final String name;
+    private final long personalNumber;
     private LocalDate membershipPaymentDate;
-    private List<LocalDate> visits;
+    private final List<LocalDate> visits = new ArrayList<>();
 
     public Customer(long personalNumber, String name, LocalDate membershipPaymentDate) {
         this.personalNumber = personalNumber;
@@ -25,9 +26,13 @@ public class Customer implements Serializable {
     }
 
     public void printAllVisits() {
-        System.out.println(name + " har besökt gymmet följande datum: ");
-        for (LocalDate date : visits) {
-            System.out.println(date);
+        if (visits.isEmpty()) {
+            System.out.println(name + " har inte besökt gymmet");
+        } else {
+            System.out.println(name + " har besökt gymmet följande datum: ");
+            for (LocalDate date : visits) {
+                System.out.println(date);
+            }
         }
     }
 
