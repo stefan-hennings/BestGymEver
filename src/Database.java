@@ -45,6 +45,7 @@ public class Database implements Serializable {
     }
     
     public static void readFromTextFile() {
+        customers = new ArrayList<>();
         try (Scanner scanner = new Scanner(new FileInputStream(textFile)).useDelimiter("[,\n]")) {
             while (scanner.hasNext()) {
                 try {

@@ -1,5 +1,9 @@
 public class Gym {
 
+    public static void addCustomer(Customer customer) {
+
+    }
+
     public static Customer findCustomer() {
         String input;
         if (Database.testing) {

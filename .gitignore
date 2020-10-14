@@ -1,2 +1,3 @@
-*.ser
+customerlist.ser
 \out
+customers.txt
