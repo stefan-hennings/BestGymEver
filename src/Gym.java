@@ -1,7 +1,12 @@
 public class Gym {
 
     public static Customer findCustomer() {
-        String input = IOTools.getString("Skriv in namn eller personnummer: ").trim();
+        String input;
+        if (Database.testing) {
+            input = Database.testInput;
+        } else {
+            input = IOTools.getString("Skriv in namn eller personnummer: ").trim();
+        }
         try {
             return Gym.findCustomer(Long.parseLong(input));
         } catch (NumberFormatException e) {

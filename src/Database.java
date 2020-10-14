@@ -10,9 +10,15 @@ public class Database implements Serializable {
     public static String database = "customerlist.ser";
     private static List<Customer> customers = new ArrayList<>();
 
+    public static void activateTestMode(String input) {
+        testInput = input;
+        activateTestMode();
+    }
+
     public static void activateTestMode() {
         testing = true;
         database = "test.ser";
+        textFile = "test.txt";
         initializeCustomers();
     }
 
