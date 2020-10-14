@@ -29,7 +29,7 @@ public class Menus {
             case 1 -> Gym.printAllVisitsAllCustomers();
             case 2 -> Gym.findCustomer();
             case 3 -> {
-                return;
+                //return;
             }
             default -> System.out.println("Ange ett giltigt val! (1-3)");
         }
