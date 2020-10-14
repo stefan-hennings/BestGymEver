@@ -24,6 +24,13 @@ public class Customer implements Serializable {
         Database.save();
     }
 
+    public void printAllVisits() {
+        System.out.println(name + " har besökt gymmet följande datum: ");
+        for (LocalDate date : visits) {
+            System.out.println(date);
+        }
+    }
+
     public String getName() {
         return name;
     }

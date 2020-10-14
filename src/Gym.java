@@ -1,6 +1,13 @@
-import java.time.LocalDate;
+public class Gym {
 
-public class CheckIn {
+    public static Customer findCustomer() {
+        String input = IOTools.getString("Skriv in namn eller personnummer: ").trim();
+        try {
+            return Gym.findCustomer(Long.parseLong(input));
+        } catch (NumberFormatException e) {
+            return Gym.findCustomer(input);
+        }
+    }
 
     public static Customer findCustomer(String name) {
         for (Customer customer : Database.getCustomers()) {
@@ -20,7 +27,8 @@ public class CheckIn {
         return null;
     }
 
-    public static void checkIn(Customer customer) {
+    public static void checkIn() {
+        Customer customer = findCustomer();
         if (customer == null) {
             System.out.println("Kunden är inte medlem. ");
         } else if (customer.isActiveMember()) {
@@ -28,6 +36,12 @@ public class CheckIn {
             System.out.println("Kunden har aktivt medlemskap. ");
         } else {
             System.out.println("Kundens medlemskap har gått ut. ");
+        }
+    }
+
+    public static void printAllVisitsAllCustomers() {
+        for (Customer customer : Database.getCustomers()) {
+            customer.printAllVisits();
         }
     }
 }
