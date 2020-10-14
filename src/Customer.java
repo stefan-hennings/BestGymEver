@@ -21,7 +21,7 @@ public class Customer implements Serializable {
 
     public void logVisit() {
         visits.add(LocalDate.now());
-        Database.update();
+        Database.save();
     }
 
     public String getName() {

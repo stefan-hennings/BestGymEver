@@ -1,4 +1,4 @@
-public class Utility {
+public class IOTools {
     public static String getString(String question) {
         String response = null;
         while (response == null || response.isEmpty()) {
