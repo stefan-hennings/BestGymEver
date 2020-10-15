@@ -22,10 +22,6 @@ public class Database implements Serializable {
         initializeCustomers();
     }
 
-    public static List<Customer> getCustomers() {
-        return customers;
-    }
-
     public static void save() {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(database))) {
             out.writeObject(customers);
@@ -33,7 +29,7 @@ public class Database implements Serializable {
             e.printStackTrace();
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     public static void initializeCustomers() {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(database))) {
@@ -42,7 +38,7 @@ public class Database implements Serializable {
             readFromTextFile();
         }
     }
-    
+
     public static void readFromTextFile() {
         customers = new ArrayList<>();
         try (Scanner scanner = new Scanner(new FileInputStream(textFile)).useDelimiter("[,\n]")) {
@@ -57,5 +53,9 @@ public class Database implements Serializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static List<Customer> getCustomers() {
+        return customers;
     }
 }

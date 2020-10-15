@@ -55,6 +55,7 @@ public class Gym {
             if (!customer.getVisits().isEmpty()) {
                 customer.printAllVisits();
                 hasBeenVisited = true;
+                System.out.println();
             }
         }
         if (!hasBeenVisited) {
