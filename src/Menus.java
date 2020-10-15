@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class Menus {
-    static Scanner scanner = new Scanner(System.in);
-
     public static void mainMenu() {
         boolean running = true;
         while (running) {
