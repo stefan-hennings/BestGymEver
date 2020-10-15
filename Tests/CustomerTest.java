@@ -12,8 +12,8 @@ public class CustomerTest {
         Database.getCustomers().add(new Customer(1, "Daniel", LocalDate.now()));
         Database.getCustomers().add(new Customer(2, "Elias", LocalDate.now().minusYears(1)));
 
-        assertTrue(Database.getCustomers().get(Database.getCustomers().size()-2).isActiveMember());
-        assertFalse(Database.getCustomers().get(Database.getCustomers().size()-1).isActiveMember());
+        assertTrue(Database.getCustomers().get(Database.getCustomers().size() - 2).isActiveMember());
+        assertFalse(Database.getCustomers().get(Database.getCustomers().size() - 1).isActiveMember());
     }
 
     @Test

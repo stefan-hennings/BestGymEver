@@ -16,7 +16,6 @@ public class Customer implements Serializable {
     }
 
     public boolean isActiveMember() {
-        //return membershipPaymentDate.plusYears(1).compareTo(LocalDate.now()) <= 0;
         return membershipPaymentDate.plusYears(1).isAfter(LocalDate.now());
     }
 
